@@ -21,6 +21,14 @@
             </nav>
         </div>
     </header>
+    <img src="{{ profile.image.url }}" alt="" class="profile_picture">
+    <form method="POST" enctype="multipart/form-data" action="{% url 'user_photo' %}">
+        {% csrf_token %}
+        <br>
+        <label for="image">Upload a new picture:</label>
+        <input type="file" name="image" id="image" required><br>
+        <button type="submit">Upload</button>
+    </form>
     <h1>{{ profile.user.username }} 's Profile</h1>
     <p>{{ profile.gender }}</p>
     <p>at {{ profile.country }}</p>

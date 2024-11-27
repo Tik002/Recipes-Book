@@ -39,7 +39,7 @@
     <h2>Comments</h2>
     {% if comment %}
         {% for i in comment %}
-            <li>{{ i.creator }} <br><br>{{ i.text }} <br>Commented at {{i.created_at}}</li> <br><br>
+            <li><img src="{{i.creator.recipesuser.image.url}}" alt="" class="small_profie_picture"> {{ i.creator }} <br><br>{{ i.text }} <br>Commented at {{i.created_at}}</li> <br><br>
         {% endfor %}
     {% else %}
     <p>No comments yet</p>
@@ -50,7 +50,7 @@
     <p>rateing: {{recipes.rate}}</p>    
     <p>rate {{recipes.count}} users</p>
     <a href="{% url 'rate' recipes.id %}">Rate</a>
-    <p>created by: {{recipes.creator}}</p>
+    <p>created by: <img src="{{recipes.creator.image.url}}" alt="" class="small_profie_picture"> {{recipes.creator}}</p>
     
     {% if boolean == True %}
         <a href="{% url 'recipe_edit' recipes.id %}">Edit recipe</a>

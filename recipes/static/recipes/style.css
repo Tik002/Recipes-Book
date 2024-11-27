@@ -141,3 +141,13 @@ footer p {
     width: 500px;
     height: 500px;
 }
+
+.profile_picture{
+    width: 200px;
+    height: 200px;
+}
+
+.small_profie_picture{
+    width: 40px;
+    height: 40px;    
+}

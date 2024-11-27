@@ -14,6 +14,8 @@ class RecipesUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     country = models.CharField(max_length=20)
     gender = models.CharField(max_length=20, choices=MY_CHOICES, default=OPTION_THREE,)
+    image = models.ImageField(blank=True, upload_to='images', null=True, default='/images/default_photo.jpg')
+
 
     def __str__(self):
         return self.user.username

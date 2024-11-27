@@ -13,4 +13,5 @@ urlpatterns = [
     path('recipe_edit/<int:recipe_id>/', views.recipe_edit, name='recipe_edit'),
     path("scraping_add/", views.scraping_add, name="scraping_add"),
     path("comment/<int:pk>/", views.comment, name="comment"),
+    path('picture/', views.user_photo, name="user_photo")
 ]

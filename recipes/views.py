@@ -130,8 +130,17 @@ def recipe_add(request):
         return HttpResponseRedirect("/login/")
 #
 #
-# def like(request):
-#     if request.user.is_authenticated:
+def user_photo(request):
+            if request.method == 'GET':
+                return render(request, "recipes/profile.html")
+            else:
+                user = request.user
+                image = request.FILES.get('image')
+                recipesuser = get_object_or_404(RecipesUser, user=user)
+                recipesuser.image = image
+                recipesuser.save()
+                return redirect('profile')
+
 
 
 
